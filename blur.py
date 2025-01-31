@@ -3,26 +3,41 @@ import os
 import sys
 import shutil
 
-def is_blurry(image_path, threshold=80):
+# def is_blurry(image_path, threshold=80):
+#     image = cv2.imread(image_path)
+
+#     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+
+#     saturation = hsv[:,:,1]
+
+#     mean_saturation = saturation.mean()
+#     # Adjust threshold based on image type
+#     if image_path.endswith('.jpg') or image_path.endswith('.jpeg'):
+#         threshold = 100
+#     elif image_path.endswith('.png'):
+#         threshold = 200
+
+#     if  mean_saturation > threshold:
+#         return True
+#     else:
+#         return False
+
+def is_blurry(image_path, threshold=100):
     image = cv2.imread(image_path)
+    
+    # Convert image to grayscale
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-    hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+    # Apply the Laplacian operator to detect edges
+    laplacian = cv2.Laplacian(gray, cv2.CV_64F)
+    variance = laplacian.var()  # Calculate the variance of the Laplacian
 
-    saturation = hsv[:,:,1]
-
-    mean_saturation = saturation.mean()
-    # Adjust threshold based on image type
-    if image_path.endswith('.jpg') or image_path.endswith('.jpeg'):
-        threshold = 100
-    elif image_path.endswith('.png'):
-        threshold = 200
-
-    if  mean_saturation > threshold:
+    # If the variance is below a certain threshold, the image is blurry
+    if variance < threshold:
         return True
     else:
         return False
-
-
+    
 def detect_blurry_images(input_folder, output_folder):
     blurry_images = []
     blur_folder = 'Blur'

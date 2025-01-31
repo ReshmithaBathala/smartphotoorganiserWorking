@@ -14,6 +14,13 @@ def get_image_metadata(image_path):
             # Extract GPS coordinates if available
             gps_latitude = tags.get('GPS GPSLatitude')
             gps_longitude = tags.get('GPS GPSLongitude')
+            date_time = tags.get('EXIF DateTimeOriginal')
+
+            # Print metadata for debugging
+            print(f"Processing {image_path}:")
+            print(f"  GPS Latitude: {gps_latitude}")
+            print(f"  GPS Longitude: {gps_longitude}")
+            print(f"  Date: {date_time}")
 
             if gps_latitude and gps_longitude:
                 lat_degrees = gps_latitude.values[0].num / gps_latitude.values[0].den
@@ -71,5 +78,7 @@ source_directory = r"Images"
 destination_directory = r"Location"
 
 no_metadata_directory = r"Location"
+
+
 
 process_files_in_directory(source_directory, destination_directory, no_metadata_directory)

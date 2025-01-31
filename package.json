@@ -1,0 +1,26 @@
+{
+  "name": "ai-photo-organiser",
+  "version": "1.0.0",
+  "description": "**Problem statement** : \r Create an AI based solution that separates duplicates, blur photos from a given set of photos and logically organizes photos based on location, date etc. This can help create photo albums automatically based on different attributes from the huge number of photos available.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "child_process": "^1.0.2",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
