@@ -15,12 +15,6 @@ The Image Processing Server is a web application that allows users to upload ima
 5. Output Zip Creation: The processed images are packaged into a zip file for easy download by the user.
 6. Clean-up: After processing, the server clears uploaded images and processed results to conserve disk space.
 
-**Installation**
-1. Clone the repository to your local machine.
-2. Install the required dependencies by running npm install in the project directory.
-3. Make sure Python is installed on your system, as the server relies on Python scripts for image processing tasks.
-4. Run the server by executing node server.js.
-5. Access the server through your web browser at http://localhost:3001.
 
 **Usage**
 1. Navigate to the upload page on the web interface.
@@ -30,9 +24,6 @@ The Image Processing Server is a web application that allows users to upload ima
 5. Download the zip file from the provided link.
 6. The server will automatically clean up uploaded images and processed results to maintain disk space.
 
-**System Architecture**
-![Research and design](https://github.com/ironman2024/Hacksprintv5.o_AIML02_CtrlShiftHack/assets/113116636/e858fdec-2986-446e-89d1-9fffc12a9334)
-
 
 **Dependencies**
 1. Node.js
@@ -41,11 +32,3 @@ The Image Processing Server is a web application that allows users to upload ima
 4. Archiver
 5. Python (with required libraries for image processing)
 
-
-**Authors**
-1. Atharva Karval
-2. Samarth Patil
-3. Shweta Ingole
-4. Swarali Kulkarni
-
-*Acknowledgements*: Special thanks to Anushka Vaidya for their contributions to this project.
